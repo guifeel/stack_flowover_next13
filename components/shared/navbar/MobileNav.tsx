@@ -81,7 +81,6 @@ const MobileNav = () => {
             <SheetClose asChild>
               <NavContent />
             </SheetClose>
-            <SheetClose></SheetClose>
             <SignedOut>
               <div className="flex flex-col gap-3 ">
                 <SheetClose>
