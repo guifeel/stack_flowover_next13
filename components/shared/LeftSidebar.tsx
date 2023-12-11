@@ -2,11 +2,10 @@
 import { sidebarLinks } from "@/constants";
 import Link from "next/link";
 import React from "react";
-import { SheetClose } from "./ui/sheet";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { SignedOut } from "@clerk/nextjs";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const LeftSidebar = () => {
   const pathname = usePathname();
