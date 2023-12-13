@@ -5,18 +5,18 @@ import RenderTag from "./RenderTag";
 
 const RitghtSidebar = () => {
   const hotQuestions = [
-    { _id: 1, title: "1这不是人类的问题" },
-    { _id: 2, title: "2这不是人类的问题" },
-    { _id: 3, title: "3这不是人类的问题" },
-    { _id: 4, title: "4这不是人类的问题" },
-    { _id: 5, title: "5这不是人类的问题" },
+    { _id: "1", title: "1这不是人类的问题" },
+    { _id: "2", title: "2这不是人类的问题" },
+    { _id: "3", title: "3这不是人类的问题" },
+    { _id: "4", title: "4这不是人类的问题" },
+    { _id: "5", title: "5这不是人类的问题" },
   ];
   const popularTags = [
-    { _id: 1, name: "Javascript", totalQuestions: 5 },
-    { _id: 2, name: "React", totalQuestions: 5 },
-    { _id: 3, name: "Next", totalQuestions: 5 },
-    { _id: 4, name: "Vue", totalQuestions: 2 },
-    { _id: 5, name: "Redux", totalQuestions: 10 },
+    { _id: "1", name: "Javascript", totalQuestions: 5 },
+    { _id: "2", name: "React", totalQuestions: 5 },
+    { _id: "3", name: "Next", totalQuestions: 5 },
+    { _id: "4", name: "Vue", totalQuestions: 2 },
+    { _id: "5", name: "Redux", totalQuestions: 10 },
   ];
   return (
     <section
