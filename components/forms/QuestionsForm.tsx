@@ -15,13 +15,16 @@ import {
 import { Input } from "@/components/ui/input";
 import * as z from "zod";
 import { QuestionSchema } from "@/lib/validations";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 
+const type: any = "create";
+
 const QuestionsForm = () => {
   const editorRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // 这里没有默认值，会报错TypeError: Cannot read properties of undefined (reading 'length')
   const form = useForm<z.infer<typeof QuestionSchema>>({
     resolver: zodResolver(QuestionSchema),
@@ -32,9 +35,15 @@ const QuestionsForm = () => {
     },
   });
   function onSubmit(values: z.infer<typeof QuestionSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    setIsSubmitting(true);
+    try {
+      // 向API发送POST请求
+      // 所有内容
+      // 路由跳转
+    } catch (error) {
+    } finally {
+      setIsSubmitting(false);
+    }
   }
   const handleInputKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
@@ -187,7 +196,17 @@ const QuestionsForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="primary-gradient w-fit text-light-900"
+        >
+          {isSubmitting ? (
+            <>{type === "edit" ? "编辑中..." : "发布中..."}</>
+          ) : (
+            <>{type === "edit" ? "编辑" : "提问"}</>
+          )}
+        </Button>
       </form>
     </Form>
   );
